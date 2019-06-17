@@ -1,5 +1,6 @@
 package me.dimas.mvpweatherapp.ui.view
 
+import me.dimas.mvpweatherapp.ErrorTypes
 import me.dimas.mvpweatherapp.ui.ForecastItemViewModel
 
 interface MainView {

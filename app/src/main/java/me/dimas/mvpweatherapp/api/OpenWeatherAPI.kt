@@ -1,5 +1,6 @@
 package me.dimas.mvpweatherapp.api
 
+import me.dimas.mvpweatherapp.data.WeatherResponse
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Query

@@ -13,8 +13,7 @@ import javax.inject.Singleton
 @Module(includes = arrayOf(GSONModule::class))
 class OpenWeatherAPIModule {
 
-    @Provides
-    @Singleton
+    @Provides @Singleton
     fun provideApi(gson: Gson): OpenWeatherAPI {
         val apiClient = OkHttpClient.Builder().addInterceptor(OpenWeatherInterceptor()).build()
 
