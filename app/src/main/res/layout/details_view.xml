@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/detail_city_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        tools:text="Berlin"/>
+    
+    <TextView
+        android:id="@+id/detail_degree_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/detail_city_name"
+        android:layout_marginLeft="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        android:textSize="@dimen/medium_text_size"
+        tools:text="27 °C"/>
+    
+    <TextView
+        android:id="@+id/detail_date_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        tools:text="01.01.1970"/>
+        
+    <TextView
+        android:id="@+id/detail_humidity_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/detail_date_text"
+        android:layout_marginRight="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        tools:text="Humidity: 213"/>
+    
+    <TextView
+        android:id="@+id/detail_pressure_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/detail_humidity_text"
+        android:layout_marginRight="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        tools:text="Pressure: 3" />
+    
+    <TextView
+        android:id="@+id/detail_minimum_degree"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/detail_pressure_text"
+        android:layout_marginRight="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        tools:text="Minimum Degree: 27 °C"/>
+    
+    <TextView
+        android:id="@+id/detail_maximum_degree_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@+id/detail_minimum_degree"
+        android:layout_marginRight="@dimen/main_padding"
+        android:layout_marginTop="@dimen/main_padding"
+        tools:text="Maximum Degree: 27 °C"/>
+</RelativeLayout>
