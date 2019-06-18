@@ -19,7 +19,7 @@ class DetailActivity: AppCompatActivity(), DetailView {
     }
 
     override fun showInformation(forecast: ForecastItemViewModel) {
-        detail_city_name.text = forecast.city
+//        detail_city_name.text = forecast.city
     }
 
     private fun getDate(date: Long): String {

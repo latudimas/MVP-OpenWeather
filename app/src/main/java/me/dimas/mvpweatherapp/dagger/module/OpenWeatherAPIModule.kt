@@ -17,6 +17,8 @@ class OpenWeatherAPIModule {
     fun provideApi(gson: Gson): OpenWeatherAPI {
         val apiClient = OkHttpClient.Builder().addInterceptor(OpenWeatherInterceptor()).build()
 
+        System.out.println(apiClient)
+
         return Retrofit.Builder().apply {
             baseUrl(OpenWeatherAPI.BASE_URL)
             addConverterFactory(GsonConverterFactory.create(gson))

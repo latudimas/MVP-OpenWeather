@@ -27,6 +27,7 @@ class MainActivity: AppCompatActivity(), MainView {
         setContentView(R.layout.activity_main)
         injectDI()
         setContentView(R.layout.activity_main)
+        initializeForecastList()
     }
 
     private fun injectDI() {
@@ -79,7 +80,7 @@ class MainActivity: AppCompatActivity(), MainView {
     override fun showSpinner() {
         forecast_list.visibility = View.GONE
         empty_state_text.visibility = View.GONE
-        loading_spinner.visibility = View.GONE
+        loading_spinner.visibility = View.VISIBLE
     }
 
     override fun hideSpinner() {
