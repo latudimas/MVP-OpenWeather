@@ -1,5 +1,6 @@
 package me.dimas.mvpweatherapp.ui.presenter
 
+import android.util.Log
 import me.dimas.mvpweatherapp.BuildConfig
 import me.dimas.mvpweatherapp.ErrorTypes
 import me.dimas.mvpweatherapp.api.OpenWeatherAPI
@@ -16,7 +17,7 @@ class MainPresenter(val view: MainView) {
     @Inject lateinit var api: OpenWeatherAPI
 
     fun getForecastForSevenDays(cityName: String) {
-        if (BuildConfig.OPEN_WEATHER_API_KEY == "f43578d8b01f018f5c93b84c316991fe") {
+        if (BuildConfig.OPEN_WEATHER_API_KEY != "f43578d8b01f018f5c93b84c316991fe") {
             view.showErrorToast(ErrorTypes.MISSING_API_KEY)
          }
 
@@ -30,7 +31,7 @@ class MainPresenter(val view: MainView) {
                 } ?: view.showErrorToast(ErrorTypes.NO_RESULT_FOUND)
             }
 
-            override fun onFailure(call: Call<WeatherResponse>, t: Throwable) {
+            override fun onFailure(call: Call<WeatherResponse>?, t: Throwable) {
                 view.showErrorToast(ErrorTypes.CALL_ERROR)
                 t.printStackTrace()
             }

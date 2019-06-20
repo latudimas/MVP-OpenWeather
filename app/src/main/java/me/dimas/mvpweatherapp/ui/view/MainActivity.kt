@@ -24,10 +24,10 @@ class MainActivity: AppCompatActivity(), MainView {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
         injectDI()
         setContentView(R.layout.activity_main)
         initializeForecastList()
+        getForecast("london, GB")
     }
 
     private fun injectDI() {
@@ -46,28 +46,33 @@ class MainActivity: AppCompatActivity(), MainView {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
-        menuInflater.inflate(R.menu.main_page_menu, menu)
+    private fun jakartaWeather(cityName: String) {
+        getForecast("berlin")
 
-        val menuItem = menu?.findItem(R.id.search_button)
-        val searchMenuItem = menuItem?.actionView
-
-        if (searchMenuItem is SearchView) {
-            searchMenuItem.queryHint = getString(R.string.menu_search_hint)
-            searchMenuItem.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
-                override fun onQueryTextSubmit(query: String): Boolean {
-                    getForecast(query)
-                    menuItem.collapseActionView()
-                    return false
-                }
-
-                override fun onQueryTextChange(newText: String?): Boolean {
-                    return false
-                }
-            })
-        }
-        return true
     }
+
+//    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+//        menuInflater.inflate(R.menu.main_page_menu, menu)
+//
+//        val menuItem = menu?.findItem(R.id.search_button)
+//        val searchMenuItem = menuItem?.actionView
+//
+//        if (searchMenuItem is SearchView) {
+//            searchMenuItem.queryHint = getString(R.string.menu_search_hint)
+//            searchMenuItem.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
+//                override fun onQueryTextSubmit(query: String): Boolean {
+//                    getForecast(query)
+//                    menuItem.collapseActionView()
+//                    return false
+//                }
+//
+//                override fun onQueryTextChange(newText: String?): Boolean {
+//                    return false
+//                }
+//            })
+//        }
+//        return true
+//    }
 
     private fun getForecast(query: String) = presenter.getForecastForSevenDays(query)
 
