@@ -6,7 +6,7 @@ import me.dimas.mvpweatherapp.ui.presenter.MainPresenter
 import javax.inject.Singleton
 
 @Singleton
-@Component(modules = arrayOf(OpenWeatherAPIModule::class))
+@Component(modules = [OpenWeatherAPIModule::class])
 interface OpenWeatherAPIComponent {
     fun inject(presenter: MainPresenter);
 
